@@ -22,7 +22,7 @@ program eop_interp
     real(dp) :: x_int
     real(dp) :: y_int
     real(dp) :: ut1_int
-    ! character(len=128) :: tmp
+    character(len=1) :: tmp
 
     n_args = command_argument_count()
 
@@ -52,7 +52,7 @@ program eop_interp
     allocate (delta_ut1_utc(n_lines))
 
     do i = 1, n_lines
-        read (u, *) mjd(i), x(i), y(i), typ(i), delta_ut1_utc(i)
+        read (u, *) mjd(i), tmp, tmp, tmp, typ(i), x(i), tmp, y(i), tmp, tmp, tmp, tmp, tmp, tmp, delta_ut1_utc(i)
     end do
 
     close (u)
